@@ -308,5 +308,8 @@
   secs.forEach(function(s){ spy.observe(s); });
 </script>
 
+<!-- dev only: open the page with ?jig to drag-set photo crops (see assets/crop-jig.js) -->
+<script>if(location.search.indexOf('jig')>-1){var j=document.createElement('script');j.src='/assets/crop-jig.js';document.body.appendChild(j);}</script>
+
 </body>
 </html>

@@ -94,7 +94,7 @@
   .page__glow{position:absolute;z-index:0;pointer-events:none;width:64vw;height:64vw;max-width:760px;max-height:760px;border-radius:50%;background:radial-gradient(circle,var(--pop) 0%,transparent 66%);opacity:.14;filter:blur(54px);right:-13vw;top:-15vw;}
   /* faint full-bleed cover photo — your headline image, set big behind the title */
   .cover__bg{position:absolute;inset:0;z-index:0;pointer-events:none;}
-  .cover__bg img{width:100%;height:100%;object-fit:cover;opacity:.26;
+  .cover__bg img{display:block;width:100%;height:100%;object-fit:cover;opacity:.26;
     -webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 92%);mask-image:linear-gradient(180deg,#000 0%,transparent 92%);}
 
   .idx{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--pop);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
@@ -383,6 +383,9 @@
   }, {threshold:.5});
   slides.forEach(function(s){ spy.observe(s); });
 </script>
+
+<!-- dev only: open the page with ?jig to drag-set photo crops (see assets/crop-jig.js) -->
+<script>if(location.search.indexOf('jig')>-1){var j=document.createElement('script');j.src='/assets/crop-jig.js';document.body.appendChild(j);}</script>
 
 </body>
 </html>

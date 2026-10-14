@@ -20,6 +20,7 @@ portfolio-starter/
 ├── 404.html
 ├── robots.txt  ·  sitemap.xml  ·  llms.txt   # discovery files (edit the domain)
 ├── LICENSE                        # MIT
+├── GIVE-THIS-TO-YOUR-AI.md        # the operating manual for your AI assistant (CLAUDE.md / AGENTS.md point here)
 ├── thinking/
 │   ├── the-em-dash-manifesto.html # essay page format (TOC rail, pull-quotes, figures)
 │   └── its-not-this-its-that.html
@@ -30,6 +31,7 @@ portfolio-starter/
 │   └── case-study.html            # gated case study as a STAR scroll-snap slide deck
 └── assets/
     ├── favicon.svg
+    ├── crop-jig.js                # dev-only drag-to-crop tool; add ?jig to any page URL
     ├── resume.pdf                 # placeholder — swap for your own (homepage links to it)
     └── aww/                       # cute-animal placeholder images (swap for real art)
 ```
@@ -73,6 +75,16 @@ The desktop sidebar collapses to a hamburger, blur effects switch off under 900p
 
 ---
 
+## Let your AI run it
+
+There is no CMS. Your AI assistant is the CMS. The repo ships **`GIVE-THIS-TO-YOUR-AI.md`**: the operating manual written for Claude, ChatGPT, Cursor, Copilot or whatever you build with. It explains how every page is wired, gives a step-by-step recipe for each common change (a new essay, a lab page, a gated case study, an image swap, a section rename), lists the rules that keep the site from breaking, and ends with the checks to run before calling a change done.
+
+Paste the file into your assistant, or just point it at the repo; `CLAUDE.md` and `AGENTS.md` already tell Claude Code, Cursor and Codex to read it first. Then ask in plain words:
+
+> "Add an essay called *Title* to Thinking. Here's the text. Add the card and update the sitemap."
+
+The manual steps below are the same work by hand.
+
 ## Make it yours: the 5-minute version
 
 1. **Your name.** Find-and-replace `Your Name` across all `.html` files. (Also check the wordmark in `index.html`: it's split as `Your<br>Name`.)
@@ -91,6 +103,10 @@ The desktop sidebar collapses to a hamburger, blur effects switch off under 900p
 | Floated figure (`figure.tall`) | essays | portrait | ~600×1200 |
 | In-body figure (`figure.media`) | essays | wide | ~1000×800 |
 | Before/after pair | `work/case-study.html` | square-ish | ~1000×830 |
+
+### Setting a crop: the jig
+
+Every page with photos ships a dev-only drag-to-crop tool. Add `?jig` to the URL (`http://localhost:8000/?jig`), drag any photo to set its focal point, scroll to zoom, then hit **Copy all** in the corner HUD and paste the list to your AI; it bakes the values in as inline styles. Nothing loads without the flag, so it is safe to leave in. Source: `assets/crop-jig.js`.
 
 ---
 
@@ -135,6 +151,8 @@ Serving it (rather than `file://`) is recommended because the pages use root-abs
 ## Deploy it
 
 It's static files; host them anywhere: GitHub Pages, Cloudflare Pages, Netlify, Vercel, an S3 bucket, your own server. No configuration required. Point the host at the folder and you're live.
+
+Never done this before? `GIVE-THIS-TO-YOUR-AI.md` has a **Going live** section that walks your AI (and you) through GitHub, free hosting on Cloudflare Pages, buying a domain, nameservers and DNS, and what to do after it works. Tell your assistant "take me live" and start from zero.
 
 ---
 

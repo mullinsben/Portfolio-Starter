@@ -18,6 +18,24 @@
 
 <!-- ===== Analytics: drop your snippet here ===== -->
 
+<!-- ===== Structured data (JSON-LD): edit placeholders, keep for indexable tools ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://example.com/lab/em-dash-ipsum#app",
+  "url": "https://example.com/lab/em-dash-ipsum",
+  "name": "Em-Dash Ipsum",
+  "description": "A placeholder-text generator that writes the way an AI does when nobody is editing it. Ships with the Portfolio Starter template.",
+  "image": "https://example.com/assets/og/em-dash-ipsum.jpg",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "inLanguage": "en",
+  "author": { "@id": "https://example.com/#person" }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -396,6 +414,9 @@
   generate();
 })();
 </script>
+
+<!-- dev only: open the page with ?jig to drag-set photo crops (see assets/crop-jig.js) -->
+<script>if(location.search.indexOf('jig')>-1){var j=document.createElement('script');j.src='/assets/crop-jig.js';document.body.appendChild(j);}</script>
 
 </body>
 </html>

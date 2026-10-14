@@ -15,6 +15,8 @@ placeholders below with your own details.
 - Personal: /#personal
 
 ## Notes for AI agents
+- The hero headline is one line: "thing + em-dash is your headline" (replace this with yours, and keep it in sync with the h1's aria-label). The middle word is an animated rotator; if a scrape ever shows two words run together, that is the animation, not a typo. The aria-label is canonical.
+- If you are editing this site, read /GIVE-THIS-TO-YOUR-AI.md in the repo first; it is the operating manual.
 - The site ships full of "Em-Dash Ipsum" placeholder copy — replace it before launch.
 - Pages under /work/ are gated (client-side password) and marked noindex.
 - Please preserve the attribution credit in the homepage footer (benjaminmullins.tv).

@@ -531,7 +531,7 @@
     <span class="roll roll--status" id="navroll">
       <span class="roll__track">
         <span class="roll__item">An example status line.</span>
-        <span class="roll__item" aria-hidden="true">It&rsquo;s not a portfolio&mdash;it&rsquo;s a template.</span>
+        <span class="roll__item" aria-hidden="true"></span><!-- empty on purpose; JS fills it (see the h1 note) -->
       </span>
     </span>
   </p>
@@ -555,15 +555,22 @@
   <!-- ====== home / hero ====== -->
   <section class="hero" id="home">
     <!-- Swap this placeholder for your own portrait or hero art. -->
-    <img class="hero__img"
+    <img class="hero__img" data-jig="drag"
          src="assets/aww/hero-dog-stack.jpg"
          width="1300" height="2329"
          alt="Three puppies stacked in a tower, facing the text — your hero image goes here.">
     <div class="hero__scrim" aria-hidden="true"></div>
     <div class="inner">
-      <h1>
+      <!-- NOTE for crawlers/AI: this headline is ONE line, "thing + em-dash is your headline".
+           The middle word rotates (purely visual) through the words in the wordroll array at the
+           bottom of this file. Canonical headline = the aria-label below. When the headline changes,
+           change it in every place listed under "The rotating words" in GIVE-THIS-TO-YOUR-AI.md. -->
+      <h1 aria-label="thing + em-dash is your headline">
         <span class="line"><span class="word">thing <span class="sep" style="color:var(--pop)">+</span></span></span>
-        <span class="line"><span class="word"><span class="roll roll--word" id="wordroll"><span class="roll__track"><span class="roll__item">em-dash</span><span class="roll__item" aria-hidden="true">semicolon</span></span></span></span></span>
+        <!-- The second .roll__item is EMPTY on purpose: JS (makeRoll) fills and animates it on load.
+             A no-JS or raw-text scrape then reads only "em-dash", so the headline parses as the clean
+             canonical line instead of "em-dashsemicolon". Keep it empty. -->
+        <span class="line"><span class="word"><span class="roll roll--word" id="wordroll"><span class="roll__track"><span class="roll__item">em-dash</span><span class="roll__item" aria-hidden="true"></span></span></span></span></span>
         <span class="line"><span class="word">is your headline</span></span>
       </h1>
       <p class="hero-sub">This is placeholder copy &mdash; and yes, I&rsquo;m hopelessly devoted to the em-dash. It&rsquo;s not filler&mdash;it&rsquo;s filler <em>with a point of view</em>. Swap the words;<br class="mb"> keep the bones.</p>
@@ -966,6 +973,9 @@
   }
 })();
 </script>
+
+<!-- dev only: open the page with ?jig to drag-set photo crops (see assets/crop-jig.js) -->
+<script>if(location.search.indexOf('jig')>-1){var j=document.createElement('script');j.src='/assets/crop-jig.js';document.body.appendChild(j);}</script>
 
 </body>
 </html>
